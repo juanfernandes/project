@@ -4,23 +4,31 @@
 
 if [[ -z $1 ]]
 then
-echo "no project name given"
+echo "No site name given - i.e. motortrak.com."
 exit 1
 fi
 if [[ ! -z $2 ]]
 then
-echo "you need to quote project names with a space in them"
+echo "You need quote around a site name with a space in them."
 exit 1
 fi
 
 PROJECTNAME=$1
-PROJECTDIR="$HOME/Documents/$PROJECTNAME"
+PROJECTDIR="/usr/local/etc/httpd/$PROJECTNAME"
+
+PROMPT="Username: "
+echo -n $PROMPT
+read USERNAME
+PROMPT="Password: "
+echo -n "${PROMPT}"
+read  -s PASSWORD 
+echo ""
 
 # Creates directory with desired project name
 mkdir -p "$PROJECTDIR"
 
 # Clones Steve Rydz's boilerplate directory
-git clone git@github.com:steverydz/boilerplate.git "$PROJECTDIR"
+git clone https://${USERNAME}:${PASSWORD}@bitbucket.org/NAME/boilerplatename.git "$PROJECTDIR"
 
 # Removes readme and git
 rm -rf $PROJECTDIR/{.git*,README.md}
