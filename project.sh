@@ -4,12 +4,12 @@
 
 if [[ -z $1 ]]
 then
-echo "No site name given - i.e. motortrak.com."
+echo "No project name given."
 exit 1
 fi
 if [[ ! -z $2 ]]
 then
-echo "You need quote around a site name with a space in them."
+echo "You need to quote project names with a space in them."
 exit 1
 fi
 
