@@ -3,7 +3,7 @@ Project
 
 Improvements made to this script by Bob (https://github.com/rjw1)
 
-Username and Password prompt changes by Robin Wiggs
+Username and Password prompt changes by Robin Wiggs (https://twitter.com/wiggsr)
 
 A very simple script that creates a new directory and pulls in my boilerplate repo. If you would like to use this script with your own boilerplate, just change the URL on `line 23` to point to your boilerplates repo.
 
