@@ -14,7 +14,7 @@ exit 1
 fi
 
 PROJECTNAME=$1
-PROJECTDIR="/usr/local/etc/httpd/$PROJECTNAME"
+PROJECTDIR="$HOME/Documents/$PROJECTNAME"
 
 PROMPT="Username: "
 echo -n $PROMPT
@@ -27,13 +27,9 @@ echo ""
 # Creates directory with desired project name
 mkdir -p "$PROJECTDIR"
 
-# Clones the boilerplate directory
+# Clones your boilerplate directory
+git clone https://${USERNAME}:${PASSWORD}@bitbucket.org/[NAME]/[boilerplatename].git "$PROJECTDIR"
 
-#BitBucket
-#git clone https://${USERNAME}:${PASSWORD}@bitbucket.org/[NAME]/[boilerplatename].git "$PROJECTDIR"
-
-#GitHub
-git clone git@github.com:[COMPANY]/[boilerplatename].git "$PROJECTDIR"
 
 # Removes readme and git
 rm -rf $PROJECTDIR/{.git*,README.md}
