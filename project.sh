@@ -27,8 +27,13 @@ echo ""
 # Creates directory with desired project name
 mkdir -p "$PROJECTDIR"
 
-# Clones Steve Rydz's boilerplate directory
-git clone https://${USERNAME}:${PASSWORD}@bitbucket.org/NAME/boilerplatename.git "$PROJECTDIR"
+# Clones the boilerplate directory
+
+#BitBucket
+#git clone https://${USERNAME}:${PASSWORD}@bitbucket.org/[NAME]/[boilerplatename].git "$PROJECTDIR"
+
+#GitHub
+git clone git@github.com:[COMPANY]/[boilerplatename].git "$PROJECTDIR"
 
 # Removes readme and git
 rm -rf $PROJECTDIR/{.git*,README.md}
