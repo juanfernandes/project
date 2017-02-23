@@ -14,22 +14,22 @@ exit 1
 fi
 
 PROJECTNAME=$1
-PROJECTDIR="$HOME/Documents/$PROJECTNAME"
+PROJECTDIR="$HOME/sites/$PROJECTNAME"
 
-PROMPT="Username: "
-echo -n $PROMPT
-read USERNAME
-PROMPT="Password: "
-echo -n "${PROMPT}"
-read  -s PASSWORD 
-echo ""
+#PROMPT="Username: "
+#echo -n $PROMPT
+#read USERNAME
+#PROMPT="Password: "
+#echo -n "${PROMPT}"
+#read  -s PASSWORD
+#echo ""
 
 # Creates directory with desired project name
 mkdir -p "$PROJECTDIR"
 
 # Clones your boilerplate directory
-git clone https://${USERNAME}:${PASSWORD}@bitbucket.org/[NAME]/[boilerplatename].git "$PROJECTDIR"
-
+#git clone https://${USERNAME}:${PASSWORD}@gitlab.com/juanfernandes/starter-templates.git "$PROJECTDIR"
+git clone https://gitlab.com/juanfernandes/starter-templates.git "$PROJECTDIR"
 
 # Removes readme and git
 rm -rf $PROJECTDIR/{.git*,README.md}
